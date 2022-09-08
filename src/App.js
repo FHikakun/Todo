@@ -6,12 +6,16 @@ const App = () => {
   const [todos, setTodos] = useState(['JS', 'React','test']);
   const [inputText, setInputText] = useState('');
 
+  // todosに追加
   const handleAddTodo = () => {
     todos.push(inputText);
-    setInputText(...todos);
+    setInputText(todos);
   }
 
-  const handleInputText = (text) => setInputText(text);
+  // 入力文字を保存
+  const handleInputText = (text) => {
+    setInputText(text);
+  }
 
   return (
     <div>

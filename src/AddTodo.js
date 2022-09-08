@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 
 const AddTodo = ({text, handleInputText, handleAddTodo}) => {
 
+    // 入力チェック
     const InputValidate = () => {
         console.log(text);
         if(text === ''){
@@ -9,6 +10,7 @@ const AddTodo = ({text, handleInputText, handleAddTodo}) => {
           }
         handleAddTodo();
     }
+    
     return(
         <div>
             <input type="text" onChange={(e) => handleInputText(e.target.value)} />
