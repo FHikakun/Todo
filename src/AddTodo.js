@@ -1,19 +1,19 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 const AddTodo = ({text, handleInputText, handleAddTodo}) => {
 
     // 入力チェック
     const InputValidate = () => {
-        console.log(text);
         if(text === ''){
             return ;
           }
         handleAddTodo();
+        handleInputText('');
     }
     
     return(
         <div>
-            <input type="text" onChange={(e) => handleInputText(e.target.value)} />
+            <input type="text" value={text} onChange={(e) => handleInputText(e.target.value)} />
             <button onClick={InputValidate}>登録</button>
         </div>
     );

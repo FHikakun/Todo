@@ -9,7 +9,7 @@ const App = () => {
   // todosに追加
   const handleAddTodo = () => {
     todos.push(inputText);
-    setInputText(todos);
+    setTodos(todos);
   }
 
   // 入力文字を保存
