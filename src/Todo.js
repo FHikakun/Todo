@@ -1,8 +1,9 @@
 
-const Todo = ({todo1}) => {
+const Todo = ({todo}) => {
+
     return (
         <li>
-            {todo1}
+            {todo.task}
             <button>削除</button>  
         </li>  
     );

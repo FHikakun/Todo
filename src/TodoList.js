@@ -3,7 +3,8 @@ import Todo from './Todo';
 
 const TodoList = ({todos}) => {
     const test = [];
-    todos.map((todo, index) => test.push(<Todo todo1={todo} key={index}/>));
+    // keyは一意のものでないといけないのでIndexは最終手段
+    todos.map((todo) => test.push(<Todo todo={todo} key={todo.id}/>));
 
     return(
         <ul>
