@@ -1,10 +1,10 @@
 
-const Todo = ({todo}) => {
+const Todo = ({todo, deleteTodo}) => {
 
     return (
         <li>
             {todo.task}
-            <button>削除</button>  
+            <button onClick={() => deleteTodo(todo.id)}>削除</button>  
         </li>  
     );
 }

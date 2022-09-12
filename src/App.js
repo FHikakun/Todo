@@ -9,21 +9,23 @@ import TodoList from './TodoList';
  */
 const createTodo = (taskName) => {
   return {
-    id: Date.now(),
+    id: Date.now().toString(),
     task: taskName,
     isCompleted: false,
   }
 }
 
 const App = () => {
-  const [todos, setTodos] = useState([createTodo('JS'), createTodo('React'),createTodo('test')]);
+  //const [todos, setTodos] = useState([createTodo('JS'), createTodo('React'),createTodo('test')]);
+  const [todos, setTodos] = useState([]);
   const [inputText, setInputText] = useState('');
 
-  /**
-   * todosに追加
-   */
-  const handleAddTodo = () => {
-    todos.push(createTodo(inputText));
+ /**
+  * Todoを追加
+  * @param {string} text 
+  */
+  const handleAddTodo = (text) => {
+    todos.push(createTodo(text));
     setTodos(todos);
     
   }
@@ -39,7 +41,7 @@ const App = () => {
   return (
     <div>
       <AddTodo text={inputText} handleInputText={text => handleInputText(text)} handleAddTodo={handleAddTodo}/>
-      <TodoList todos={todos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }

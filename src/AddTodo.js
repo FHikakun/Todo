@@ -11,7 +11,7 @@ const AddTodo = ({text, handleInputText, handleAddTodo}) => {
         if(text === ''){
             return ;
           }
-        handleAddTodo();
+        handleAddTodo(text);
         handleInputText('');
     }
     
