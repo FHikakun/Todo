@@ -3,11 +3,15 @@ import React from 'react';
 const AddTodo = ({text, handleInputText, handleAddTodo}) => {
 
     // 入力チェック
+    /**
+     * 
+     * @returns 
+     */
     const InputValidate = () => {
         if(text === ''){
             return ;
           }
-        handleAddTodo();
+        handleAddTodo(text);
         handleInputText('');
     }
     
