@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AddTodo = ({text, handleInputText, handleAddTodo}) => {
+export const AddTodo = ({text, handleInputText, handleAddTodo}) => {
 
     // 入力チェック
     /**
@@ -22,5 +22,3 @@ const AddTodo = ({text, handleInputText, handleAddTodo}) => {
         </div>
     );
 }
-
-export default AddTodo;

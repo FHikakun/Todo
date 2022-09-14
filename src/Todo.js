@@ -1,5 +1,5 @@
 
-const Todo = ({todo, handleDeleteTodo}) => {
+ export const Todo = ({todo, handleDeleteTodo}) => {
 
     return (
         <li>
@@ -7,6 +7,4 @@ const Todo = ({todo, handleDeleteTodo}) => {
             <button onClick={() => handleDeleteTodo(todo.id)}>削除</button>  
         </li>  
     );
-}
-
-export default Todo;
+};

@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import AddTodo from './AddTodo';
-import TodoList from './TodoList';
+import { AddTodo } from './AddTodo';
+import { TodoList } from './TodoList';
 
 /**
  * Todo作成
@@ -15,7 +15,7 @@ const createTodo = (taskName) => {
   }
 }
 
-const App = () => {
+export const App = () => {
   //const [todos, setTodos] = useState([createTodo('JS'), createTodo('React'),createTodo('test')]);
   const [todos, setTodos] = useState([]);
   const [inputText, setInputText] = useState('');
@@ -54,5 +54,3 @@ const App = () => {
     </div>
   );
 }
-
-export default App;
