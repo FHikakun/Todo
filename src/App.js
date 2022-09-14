@@ -38,10 +38,19 @@ const App = () => {
     setInputText(text);
   }
 
+  /**
+   * 削除ボタン押下時
+   * @param {string} id 
+   */
+  function handleDeleteTodo(id) {
+    const todoList = todos.filter((todo) => id !== todo.id);
+    setTodos(todoList);
+  }
+
   return (
     <div>
       <AddTodo text={inputText} handleInputText={text => handleInputText(text)} handleAddTodo={handleAddTodo}/>
-      <TodoList todos={todos} setTodos={setTodos} />
+      <TodoList todos={todos} handleDeleteTodo={handleDeleteTodo} />
     </div>
   );
 }
