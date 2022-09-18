@@ -18,38 +18,37 @@ const createTodo = (taskName) => {
 export const App = () => {
   //const [todos, setTodos] = useState([createTodo('JS'), createTodo('React'),createTodo('test')]);
   const [todos, setTodos] = useState([]);
-  const [inputText, setInputText] = useState('');
 
  /**
   * Todoを追加
   * @param {string} text 
   */
   const handleAddTodo = (text) => {
-    todos.push(createTodo(text));
-    setTodos(todos);
-    
-  }
-
-  /**
-   * 入力文字を保存
-   * @param {string} text 
-   */
-  const handleInputText = (text) => {
-    setInputText(text);
+    console.log(text);
+    //pushではなぜエラー？
+    //todos.push(createTodo(text));
+    //setTodos(todos);
+    const todo = createTodo(text);
+    setTodos((todos) => [...todos, todo]);
   }
 
   /**
    * 削除ボタン押下時
    * @param {string} id 
    */
-  function handleDeleteTodo(id) {
-    const todoList = todos.filter((todo) => id !== todo.id);
-    setTodos(todoList);
+  const handleDeleteTodo = (id) => {
+    //const todoList = todos.filter((todo) => id !== todo.id);
+    //setTodos(todoList);
+    setTodos((todos) => {
+      const currentTodoList = [...todos]; //todosを展開
+      console.log(currentTodoList);
+      return currentTodoList.filter((v) => v.id !== id); //名前をｖにしてるのは？
+    })
   }
 
   return (
     <div>
-      <AddTodo text={inputText} handleInputText={text => handleInputText(text)} handleAddTodo={handleAddTodo}/>
+      <AddTodo handleAddTodo={handleAddTodo}/>
       <TodoList todos={todos} handleDeleteTodo={handleDeleteTodo} />
     </div>
   );
